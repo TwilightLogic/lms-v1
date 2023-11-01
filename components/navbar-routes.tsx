@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from './ui/button'
 import { LogOut } from 'lucide-react'
 import Link from 'next/link'
+import { ModeToggle } from '@/app/(dashboard)/_components/modeToggle'
 
 export const NavbarRoutes = () => {
     const pathname = usePathname()
@@ -15,6 +16,7 @@ export const NavbarRoutes = () => {
 
     return (
         <div className='flex gap-x-2 ml-auto'>
+            <ModeToggle />
             {isTeacherPage || isPlayerPage ? (
                 <Link href='/'>
                     <Button size='sm' variant='ghost'>
