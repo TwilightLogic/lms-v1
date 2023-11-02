@@ -307,6 +307,11 @@
     tslib "^2.4.1"
     webcrypto-core "^1.7.4"
 
+"@prisma/engines@5.5.2":
+  version "5.5.2"
+  resolved "https://registry.npmmirror.com/@prisma/engines/-/engines-5.5.2.tgz#fe0d2361a48c7d59568ccf0d35c75432594e1ac1"
+  integrity sha512-Be5hoNF8k+lkB3uEMiCHbhbfF6aj1GnrTBnn5iYFT7GEr3TsOEp1soviEcBR0tYCgHbxjcIxJMhdbvxALJhAqg==
+
 "@radix-ui/primitive@1.0.1":
   version "1.0.1"
   resolved "https://registry.npmmirror.com/@radix-ui/primitive/-/primitive-1.0.1.tgz#e46f9958b35d10e9f6dc71c497305c22e3e55dbd"
@@ -2657,6 +2662,13 @@ prettier@3.0.3:
   version "3.0.3"
   resolved "https://registry.npmmirror.com/prettier/-/prettier-3.0.3.tgz#432a51f7ba422d1469096c0fdc28e235db8f9643"
   integrity sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==
+
+prisma@^5.5.2:
+  version "5.5.2"
+  resolved "https://registry.npmmirror.com/prisma/-/prisma-5.5.2.tgz#54ad2f04f0dd4174f27128e4447013e8d75c4d69"
+  integrity sha512-WQtG6fevOL053yoPl6dbHV+IWgKo25IRN4/pwAGqcWmg7CrtoCzvbDbN9fXUc7QS2KK0LimHIqLsaCOX/vHl8w==
+  dependencies:
+    "@prisma/engines" "5.5.2"
 
 prop-types@^15.8.1:
   version "15.8.1"
