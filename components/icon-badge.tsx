@@ -6,7 +6,7 @@ const backgroundVariants = cva(
     'rounded-full flex flex-col items-center justify-center',
     {
         variants: {
-            variant: { default: 'bg-primary', success: 'bg-emerald-100' },
+            variant: { default: 'bg-indigo-100', success: 'bg-emerald-100' },
             size: { default: 'p-2', sm: 'p-1' },
         },
         defaultVariants: { variant: 'default', size: 'default' },
