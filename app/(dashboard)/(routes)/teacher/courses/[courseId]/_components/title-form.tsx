@@ -81,7 +81,7 @@ export const TitleForm = ({ initialData, courseId }: TitleFormProps) => {
                             control={form.control}
                             name='title'
                             render={({ field }) => (
-                                <FormItem>
+                                <FormItem className='bg-white dark:bg-slate-800 rounded-md'>
                                     <FormControl>
                                         <Input
                                             disabled={isSubmitting}
