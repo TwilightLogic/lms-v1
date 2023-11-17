@@ -20,9 +20,6 @@ export async function PATCH(
             data: { ...values },
         })
 
-        console.log('values', values)
-        console.log('course', course)
-
         return NextResponse.json(course)
     } catch (error) {
         console.log('[COURSE_ID]', error)
