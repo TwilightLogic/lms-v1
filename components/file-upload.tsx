@@ -1,8 +1,9 @@
 'use client'
 
-import { ourFileRouter } from '@/app/api/uploadthing/core'
-import { Uploader } from '@/lib/uploadthing'
 import toast from 'react-hot-toast'
+
+import { UploadDropzone } from '@/lib/uploadthing'
+import { ourFileRouter } from '@/app/api/uploadthing/core'
 
 interface FileUploadProps {
     onChange: (url?: string) => void
@@ -11,7 +12,7 @@ interface FileUploadProps {
 
 export const FileUpload = ({ onChange, endpoint }: FileUploadProps) => {
     return (
-        <Uploader
+        <UploadDropzone
             endpoint={endpoint}
             onClientUploadComplete={(res) => {
                 onChange(res?.[0].url)
