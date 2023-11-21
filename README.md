@@ -1,4 +1,4 @@
-# LMS Platform
+# LMS Platform - Graduation Design
 
 This is a Learning Management System (LMS) platform built using Next.js, designed to facilitate online education and learning processes.
 
