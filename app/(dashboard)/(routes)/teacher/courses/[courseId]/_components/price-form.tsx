@@ -57,7 +57,7 @@ export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
     }
 
     return (
-        <div className='mt-6 border bg-slate-100 dark:bg-black rounded-md p-4'>
+        <div className='mt-6 border bg-slate-100 dark:bg-slate-900 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
                 Course price
                 <Button onClick={toggleEdit} variant='ghost'>
@@ -93,7 +93,7 @@ export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
                             control={form.control}
                             name='price'
                             render={({ field }) => (
-                                <FormItem className='bg-white dark:bg-slate-800 rounded-md'>
+                                <FormItem className='bg-white dark:bg-slate-950 rounded-md'>
                                     <FormControl>
                                         <Input
                                             disabled={isSubmitting}
