@@ -32,7 +32,6 @@ const formSchema = z.object({
 
 export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
     const [isCreating, setIsCreating] = useState(false)
-    const [isUploading, setIsUploading] = useState(false)
 
     const toggleCreating = () => setIsCreating((current) => !current)
 
