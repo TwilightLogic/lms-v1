@@ -4,12 +4,12 @@ This is a Learning Management System (LMS) platform built using Next.js, designe
 
 ## Features
 
--   **User Authentication**: Secure login and signup functionalities.
--   **Course Management**: Create, update, and delete courses.
--   **Content Delivery**: Stream videos, host documents, and manage quizzes.
--   **Progress Tracking**: Monitor learner progress and performance.
--   **Responsive Design**: Fully adaptable to tablets, smartphones, and desktops.
--   **Accessibility**: Built with accessibility in mind to reach a wide audience.
+- **User Authentication**: Secure login and signup functionalities.
+- **Course Management**: Create, update, and delete courses.
+- **Content Delivery**: Stream videos, host documents, and manage quizzes.
+- **Progress Tracking**: Monitor learner progress and performance.
+- **Responsive Design**: Fully adaptable to tablets, smartphones, and desktops.
+- **Accessibility**: Built with accessibility in mind to reach a wide audience.
 
 ## Getting Started
 
