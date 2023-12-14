@@ -11,6 +11,7 @@ import {
 } from '@hello-pangea/dnd'
 import { cn } from '@/lib/utils'
 import { Grip } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 
 interface ChaptersListProps {
     items: Chapter[]
@@ -64,13 +65,25 @@ export const ChaptersList = ({
                                     >
                                         <div
                                             className={cn(
-                                                'px-2 py-3 border-r border-r-slate-200 hover: bg-slate-300 rounded-l-md transition',
+                                                'px-2 py-3 border-r border-r-slate-200 hover:bg-slate-300 rounded-l-md transition',
                                                 chapter.isPublished &&
                                                     'border-r-sky-200 hover:bg-sky-200',
                                             )}
                                             {...provided.dragHandleProps}
                                         >
-                                            <Grip />
+                                            <Grip className='h-5 w-5' />
+                                        </div>
+                                        {chapter.title}
+                                        <div className='ml-auto pr-2 flex items-center gap-x-2'>
+                                            {chapter.isFree && (
+                                                <Badge>Free</Badge>
+                                            )}
+                                            {/* TODO: Finish the Badge TIME: 4:40 */}
+                                            <Badge className=''>
+                                                {chapter.isPublished
+                                                    ? 'Published'
+                                                    : 'Draft'}
+                                            </Badge>
                                         </div>
                                     </div>
                                 )}
