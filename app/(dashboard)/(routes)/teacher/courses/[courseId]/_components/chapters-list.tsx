@@ -37,8 +37,27 @@ export const ChaptersList = ({
     setChapters(items)
   }, [items])
 
-  // TODO: Learn more about this 4:44
-  const onDragEnd = (result: DropResult) => {}
+  const onDragEnd = (result: DropResult) => {
+    if (!result.destination) return
+
+    const items = Array.from(chapters)
+    const [reorderedItem] = items.splice(result.source.index, 1)
+    items.splice(result.destination.index, 0, reorderedItem)
+
+    const startIndex = Math.min(result.source.index, result.destination.index)
+    const endIndex = Math.max(result.source.index, result.destination.index)
+
+    const updatedCourses = items.slice(startIndex, endIndex + 1)
+
+    setChapters(items)
+
+    const bulkUpdateData = updatedCourses.map((chapter) => ({
+      id: chapter.id,
+      position: items.findIndex((item) => item.id === chapter.id),
+    }))
+
+    onReorder(bulkUpdateData)
+  }
 
   // Before the component is mounted, no content will be rendered
   if (!isMounted) {
@@ -46,7 +65,7 @@ export const ChaptersList = ({
   }
 
   return (
-    <DragDropContext onDragEnd={() => {}}>
+    <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId='chapters'>
         {(provided) => (
           <div {...provided.droppableProps} ref={provided.innerRef}>
