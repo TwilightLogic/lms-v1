@@ -1,8 +1,10 @@
+import { IconBadge } from '@/components/icon-badge'
 import { db } from '@/lib/db'
 import { auth } from '@clerk/nextjs'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, LayoutDashboard } from 'lucide-react'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+import { ChapterTitleForm } from './_components/chapter-title-form'
 
 const ChapterIdPage = async ({
   params,
@@ -50,8 +52,26 @@ const ChapterIdPage = async ({
           <div className='flex items-center justify-between w-full'>
             <div className='flex flex-col gap-y-2'>
               <h1 className='text-2xl font-medium'>Chapter Creation</h1>
-              {/* TODO: 5:01 */}
+              <span className='text-sm text-slate-700 dark:text-slate-500'>
+                Complete all fields {completionText}
+              </span>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-16'>
+        <div className='space-y-4'>
+          <div>
+            <div className='flex items-center gap-x-2'>
+              <IconBadge icon={LayoutDashboard} />
+              <h2 className='text-xl'>Customize your chapter</h2>
+            </div>
+            {/* Chapter title form */}
+            <ChapterTitleForm
+              initialData={chapter}
+              courseId={params.courseId}
+              chapterId={params.chapterId}
+            />
           </div>
         </div>
       </div>
