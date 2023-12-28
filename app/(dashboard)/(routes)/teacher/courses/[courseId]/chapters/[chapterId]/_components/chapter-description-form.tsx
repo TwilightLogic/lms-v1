@@ -18,23 +18,24 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { Textarea } from '@/components/ui/textarea'
-import { Course } from '@prisma/client'
+import { Chapter } from '@prisma/client'
+import { Editor } from '@/components/editor'
+import { Preview } from '@/components/preview'
 
 interface ChapterDescriptionFormProps {
-  initialData: Course
+  initialData: Chapter
   courseId: string
   chapterId: string
-  // TODO:5:16
 }
 
 const formSchema = z.object({
-  description: z.string().min(1, { message: 'Description is required' }),
+  description: z.string().min(1),
 })
 
 export const ChapterDescriptionForm = ({
   initialData,
   courseId,
+  chapterId,
 }: ChapterDescriptionFormProps) => {
   const [isEditing, setIsEditing] = useState(false)
 
@@ -51,7 +52,10 @@ export const ChapterDescriptionForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}`, values)
+      await axios.patch(
+        `/api/courses/${courseId}/chapters/${chapterId}`,
+        values,
+      )
       toast.success('Course updated')
       toggleEdit()
       router.refresh()
@@ -63,7 +67,7 @@ export const ChapterDescriptionForm = ({
   return (
     <div className='mt-6 border bg-slate-100 dark:bg-slate-900 rounded-md p-4'>
       <div className='font-medium flex items-center justify-between'>
-        Course description
+        Chapter description
         <Button onClick={toggleEdit} variant='ghost'>
           {isEditing ? (
             <>Cancel</>
@@ -76,14 +80,17 @@ export const ChapterDescriptionForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <p
+        <div
           className={cn(
             'text-sm mt-2',
             !initialData.description && 'italic text-slate-500',
           )}
         >
-          {initialData.description || 'No description'}
-        </p>
+          {!initialData.description && 'No description'}
+          {!initialData.description && (
+            <Preview value={initialData.description} />
+          )}
+        </div>
       )}
       {isEditing && (
         <Form {...form}>
@@ -97,11 +104,7 @@ export const ChapterDescriptionForm = ({
               render={({ field }) => (
                 <FormItem className='bg-white dark:bg-slate-950 rounded-md'>
                   <FormControl>
-                    <Textarea
-                      disabled={isSubmitting}
-                      placeholder='e.g "This course is about..."'
-                      {...field}
-                    />
+                    <Editor {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

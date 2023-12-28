@@ -28,6 +28,7 @@ export async function PATCH(
     })
 
     // TODO: Handle Video Upload
+    return NextResponse.json(chapter)
   } catch (error) {
     console.log('[COURSE_CHAPTER_ID', error)
     return new NextResponse('Internal Error', { status: 500 })
