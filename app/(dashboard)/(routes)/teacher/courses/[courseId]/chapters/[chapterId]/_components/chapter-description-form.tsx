@@ -4,6 +4,11 @@ import * as z from 'zod'
 import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { Pencil } from 'lucide-react'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
+import { Chapter } from '@prisma/client'
 
 import {
   Form,
@@ -13,12 +18,7 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Button } from '@/components/ui/button'
-import { Pencil } from 'lucide-react'
-import { useState } from 'react'
-import toast from 'react-hot-toast'
-import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { Chapter } from '@prisma/client'
 import { Editor } from '@/components/editor'
 import { Preview } from '@/components/preview'
 
@@ -45,7 +45,9 @@ export const ChapterDescriptionForm = ({
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { description: initialData?.description || '' },
+    defaultValues: {
+      description: initialData?.description || '',
+    },
   })
 
   const { isSubmitting, isValid } = form.formState
@@ -56,7 +58,7 @@ export const ChapterDescriptionForm = ({
         `/api/courses/${courseId}/chapters/${chapterId}`,
         values,
       )
-      toast.success('Course updated')
+      toast.success('Chapter updated')
       toggleEdit()
       router.refresh()
     } catch {
@@ -74,7 +76,7 @@ export const ChapterDescriptionForm = ({
           ) : (
             <>
               <Pencil className='h-4 w-4 mr-2' />
-              Edit title
+              Edit description
             </>
           )}
         </Button>
@@ -83,11 +85,11 @@ export const ChapterDescriptionForm = ({
         <div
           className={cn(
             'text-sm mt-2',
-            !initialData.description && 'italic text-slate-500',
+            !initialData.description && 'text-slate-500 italic',
           )}
         >
           {!initialData.description && 'No description'}
-          {!initialData.description && (
+          {initialData.description && (
             <Preview value={initialData.description} />
           )}
         </div>
@@ -110,8 +112,8 @@ export const ChapterDescriptionForm = ({
                 </FormItem>
               )}
             />
-            <div className='flex item-center gap-x-2'>
-              <Button type='submit' disabled={!isValid || isSubmitting}>
+            <div className='flex items-center gap-x-2'>
+              <Button disabled={!isValid || isSubmitting} type='submit'>
                 Save
               </Button>
             </div>
