@@ -7,6 +7,7 @@ import { redirect } from 'next/navigation'
 import { ChapterTitleForm } from './_components/chapter-title-form'
 import { ChapterDescriptionForm } from './_components/chapter-description-form'
 import { ChapterAccessForm } from './_components/chapter-access-form'
+import { ChapterVideoForm } from './_components/chapter-video-form'
 
 const ChapterIdPage = async ({
   params,
@@ -62,7 +63,9 @@ const ChapterIdPage = async ({
         </div>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-16'>
+        {/* grid-left */}
         <div className='space-y-4'>
+          {/* Customize your chapter */}
           <div>
             <div className='flex items-center gap-x-2'>
               <IconBadge icon={LayoutDashboard} />
@@ -79,6 +82,7 @@ const ChapterIdPage = async ({
               chapterId={params.chapterId}
             />
           </div>
+          {/* Access Settings */}
           <div>
             <div className='flex items-center gap-x-2'>
               <IconBadge icon={Eye} />
@@ -91,12 +95,17 @@ const ChapterIdPage = async ({
             />
           </div>
         </div>
+        {/* grid-right */}
         <div>
-          {/* TODO: 5:31 */}
           <div className='flex items-center gap-x-2'>
             <IconBadge icon={Video} />
             <h2 className='text-xl'>Add a video</h2>
           </div>
+          <ChapterVideoForm
+            initialData={chapter}
+            courseId={params.courseId}
+            chapterId={params.chapterId}
+          />
         </div>
       </div>
     </div>
