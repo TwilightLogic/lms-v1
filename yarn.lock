@@ -231,6 +231,42 @@
     esdoc-ecmascript-proposal-plugin "^1.0.0"
     jsonwebtoken "^9.0.0"
 
+"@mux/mux-player-react@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.npmmirror.com/@mux/mux-player-react/-/mux-player-react-2.3.0.tgz#b8f2c5d1caf73ed1f5141b5c63c2f38e33734662"
+  integrity sha512-gY13YeRGMzlOBWYPGb15gq0XxAn9BPnbmKLYlWqfsb0sYwEfavm/+dlQhMWu+vCqWlIxWT4p9VeHZVbU8CHELQ==
+  dependencies:
+    "@mux/mux-player" "2.3.0"
+    "@mux/playback-core" "0.22.0"
+    prop-types "^15.7.2"
+
+"@mux/mux-player@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.npmmirror.com/@mux/mux-player/-/mux-player-2.3.0.tgz#ccc4b9483e1a1a8899643259856a4c3525f5a9f0"
+  integrity sha512-OhpaK1mRdUG/5fbH9opYtuhEKWOTUA8fLlSvRHv9NDcf4coi5pz4x3mII2B8XadBRAF7i/TDEc06CICwiTvlNA==
+  dependencies:
+    "@mux/mux-video" "0.17.1"
+    "@mux/playback-core" "0.22.0"
+    media-chrome "~2.0.0"
+
+"@mux/mux-video@0.17.1":
+  version "0.17.1"
+  resolved "https://registry.npmmirror.com/@mux/mux-video/-/mux-video-0.17.1.tgz#738178c715ea0ed5dc95f7607f439c8a91df1f8d"
+  integrity sha512-YPe1E6hp6VRrHD6JjDqOx3xpfKiC9KlzKj31O2hXS78OLH1VwmoGNPHC8G9i43x/iyjnLazqGbm53VxMvrbFnA==
+  dependencies:
+    "@mux/playback-core" "0.22.0"
+    castable-video "1.0.3"
+    custom-media-element "1.1.0"
+    media-tracks "0.2.4"
+
+"@mux/playback-core@0.22.0":
+  version "0.22.0"
+  resolved "https://registry.npmmirror.com/@mux/playback-core/-/playback-core-0.22.0.tgz#1c06975779e80210d8e81790ae050a156c62c57d"
+  integrity sha512-FMb5HUwmGgL2ml1DAmbwd5QbQ+4kmtDhBD+HzVk6kIFIiPzSDPl3ie/EFvzQKns6dyiZDdBWGX7oDdTmbHpilA==
+  dependencies:
+    hls.js "^1.4.12"
+    mux-embed "^4.27.0"
+
 "@next/env@13.4.12":
   version "13.4.12"
   resolved "https://registry.npmmirror.com/@next/env/-/env-13.4.12.tgz#0b88115ab817f178bf9dc0c5e7b367277595b58d"
@@ -1380,6 +1416,13 @@ caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.30001538, caniuse-lite@^1.0.300015
   resolved "https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001551.tgz#1f2cfa8820bd97c971a57349d7fd8f6e08664a3e"
   integrity sha512-vtBAez47BoGMMzlbYhfXrMV1kvRF2WP/lqiMuDu1Sb4EE4LKEgjopFDSRtZfdVnslNRpOqV/woE+Xgrwj6VQlg==
 
+castable-video@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmmirror.com/castable-video/-/castable-video-1.0.3.tgz#53532ee57f7161e23b2766557c88e50e1fef8c6a"
+  integrity sha512-jFHgzt3/ivoBxdbiDht2muXEC7BpxQ7Yj4ST6QUdapYTRYlpA518bzjtIXrcip0Hgy8MBzVGaTM1IKKxWYXIpA==
+  dependencies:
+    custom-media-element "^1.0.2"
+
 chalk@^4.0.0:
   version "4.1.2"
   resolved "https://registry.npmmirror.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
@@ -1502,6 +1545,16 @@ csstype@^3.0.2:
   version "3.1.2"
   resolved "https://registry.npmmirror.com/csstype/-/csstype-3.1.2.tgz#1d4bf9d572f11c14031f0436e1c10bc1f571f50b"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
+
+custom-media-element@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/custom-media-element/-/custom-media-element-1.1.0.tgz#13c9848fcdb96ee9847e22bd5cb11df1bf29cae6"
+  integrity sha512-G/SLCdlrZPqboB7TvK7Vk3lAC5Q2WF2CsqSUoMD9XMwEB7X8eOH8Iy+ipPofHSCU/6wYLC3O9gHtcI1oimwoTg==
+
+custom-media-element@^1.0.2:
+  version "1.2.2"
+  resolved "https://registry.npmmirror.com/custom-media-element/-/custom-media-element-1.2.2.tgz#048e23509004149d20a46bf773495bb905edd0c5"
+  integrity sha512-tI+NjVRS485QlSxHeM3JIjdEZSJMLOZVp41/vvWukDmIkZSoYG9gLYl9GFZGBpY42UbRVo1eMlF7XkI/IiDHzQ==
 
 damerau-levenshtein@^1.0.8:
   version "1.0.8"
@@ -2287,6 +2340,11 @@ hasown@^2.0.0:
   dependencies:
     function-bind "^1.1.2"
 
+hls.js@^1.4.12:
+  version "1.4.14"
+  resolved "https://registry.npmmirror.com/hls.js/-/hls.js-1.4.14.tgz#a48a34a1fbcd4c3451b82a78a02fb8ad8a8812e0"
+  integrity sha512-UppQjyvPVclg+6t2KY/Rv03h0+bA5u6zwqVoz4LAC/L0fgYmIaCD7ZCrwe8WI1Gv01be1XL0QFsRbSdIHV/Wbw==
+
 hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.npmmirror.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
@@ -2748,6 +2806,16 @@ map-obj@^4.0.0, map-obj@^4.1.0:
   resolved "https://registry.npmmirror.com/map-obj/-/map-obj-4.3.0.tgz#9304f906e93faae70880da102a9f1df0ea8bb05a"
   integrity sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==
 
+media-chrome@~2.0.0:
+  version "2.0.1"
+  resolved "https://registry.npmmirror.com/media-chrome/-/media-chrome-2.0.1.tgz#f7d6af2c82fb80d7f82ed50a86fad2216c66ceee"
+  integrity sha512-6hoC5OY993t4o/YKYXn7YoWUAKG1UFAhnDXNN6kRRa5mnuL+Cwct/2Md16S4jjmTSmN5XjhEWwfCVM5NLHavOA==
+
+media-tracks@0.2.4:
+  version "0.2.4"
+  resolved "https://registry.npmmirror.com/media-tracks/-/media-tracks-0.2.4.tgz#aee3bd69bdc8f246b44af5245f7b0a68d4c94540"
+  integrity sha512-P/TbDCYTFH5gxpQ6r99iabXOwjsFwzKRgK7wiwo64Ii6nHXYhHtwEP7A7ufmEKxkNCoHc4j3Z2hvs+lXL4wPeQ==
+
 memoize-one@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmmirror.com/memoize-one/-/memoize-one-6.0.0.tgz#b2591b871ed82948aee4727dc6abceeeac8c1045"
@@ -2799,6 +2867,11 @@ ms@^2.1.1:
   version "2.1.3"
   resolved "https://registry.npmmirror.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
+
+mux-embed@^4.27.0:
+  version "4.30.0"
+  resolved "https://registry.npmmirror.com/mux-embed/-/mux-embed-4.30.0.tgz#3820109e153df75d6dc139a9b4d60482dfe9860f"
+  integrity sha512-XAgAp4CEvsiZL26GbruzeG1g33OWyrzuskDMavXUxDufTxS0/AxAhwoTTRqEzEJS9vnZa/X9R2GV3xRX1XMp2w==
 
 mz@^2.7.0:
   version "2.7.0"
@@ -3133,7 +3206,7 @@ prisma@^5.5.2:
   dependencies:
     "@prisma/engines" "5.5.2"
 
-prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmmirror.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
