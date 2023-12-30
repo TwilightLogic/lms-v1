@@ -77,6 +77,7 @@ export const ChapterVideoForm = ({
         ) : (
           <div className='relative aspect-video mt-2'>
             <MuxPlayer playbackId={initialData?.muxData?.playbackId || ''} />
+            {/* TODO: 5:47 */}
           </div>
         ))}
 
