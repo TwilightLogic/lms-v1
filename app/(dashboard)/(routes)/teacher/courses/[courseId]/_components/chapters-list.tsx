@@ -97,11 +97,16 @@ export const ChaptersList = ({
                     </div>
                     {chapter.title}
                     <div className='ml-auto pr-2 flex items-center gap-x-2'>
-                      {chapter.isFree && <Badge>Free</Badge>}
+                      {chapter.isFree && (
+                        <Badge className='bg-slate-500 dark:text-white dark:hover:bg-slate-400'>
+                          Free
+                        </Badge>
+                      )}
                       <Badge
                         className={cn(
-                          'bg-slate-500',
-                          chapter.isPublished && 'bg-indigo-700',
+                          'bg-slate-500 dark:text-white dark:hover:bg-slate-400',
+                          chapter.isPublished &&
+                            'bg-indigo-700 hover:bg-indigo-500 dark:hover:bg-indigo-500',
                         )}
                       >
                         {chapter.isPublished ? 'Published' : 'Draft'}
