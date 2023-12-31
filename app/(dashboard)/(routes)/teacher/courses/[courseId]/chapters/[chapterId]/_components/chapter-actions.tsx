@@ -35,8 +35,11 @@ export const ChapterActions = ({
         )
         toast.success('Chapter unpublished.')
       } else {
-        await axios.patch(`/api/courses/${courseId}/publish`)
+        await axios.patch(
+          `/api/courses/${courseId}/chapters/${chapterId}/publish`,
+        )
         toast.success('Chapter published.')
+        router.refresh()
       }
     } catch {
       toast.error('Something went wrong.')
