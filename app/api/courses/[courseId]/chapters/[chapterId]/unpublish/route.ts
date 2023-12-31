@@ -21,42 +21,38 @@ export async function PATCH(
       return new NextResponse('Unauthorized', { status: 401 })
     }
 
-    const chapter = await db.chapter.findUnique({
-      where: {
-        id: params.chapterId,
-        courseId: params.courseId,
-      },
-    })
-
-    const muxData = await db.muxData.findUnique({
-      where: {
-        chapterId: params.chapterId,
-      },
-    })
-
-    if (
-      !chapter ||
-      !muxData ||
-      !chapter.title ||
-      !chapter.description ||
-      !chapter.videoUrl
-    ) {
-      return new NextResponse('Missing required fields', { status: 400 })
-    }
-
-    const publishedChapter = await db.chapter.update({
+    const unpublishedChapter = await db.chapter.update({
       where: {
         id: params.chapterId,
         courseId: params.courseId,
       },
       data: {
+        isPublished: false,
+      },
+    })
+
+    const publishedChaptersInCourse = await db.chapter.findMany({
+      where: {
+        id: params.chapterId,
         isPublished: true,
       },
     })
 
-    return NextResponse.json(publishedChapter)
+    // If there are no published chapters, update the course to be unpublished
+    if (!publishedChaptersInCourse.length) {
+      await db.course.update({
+        where: {
+          id: params.courseId,
+        },
+        data: {
+          isPublished: false,
+        },
+      })
+    }
+
+    return NextResponse.json(unpublishedChapter)
   } catch (error) {
-    console.log('[COURSE_PUBLISH]', error)
+    console.log('[COURSE_UNPUBLISH]', error)
     return new NextResponse('Internal Error', { status: 500 })
   }
 }

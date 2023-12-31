@@ -39,8 +39,9 @@ export const ChapterActions = ({
           `/api/courses/${courseId}/chapters/${chapterId}/publish`,
         )
         toast.success('Chapter published.')
-        router.refresh()
       }
+
+      router.refresh()
     } catch {
       toast.error('Something went wrong.')
     } finally {
