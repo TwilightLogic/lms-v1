@@ -18,6 +18,7 @@ import { ChaptersForm } from './_components/chapters-form'
 import { Banner } from '@/components/banner'
 import { Actions } from './_components/actions'
 
+// TODO: Publish the course on FE
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth()
 
