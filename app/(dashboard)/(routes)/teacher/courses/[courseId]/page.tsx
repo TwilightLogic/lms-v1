@@ -18,7 +18,6 @@ import { ChaptersForm } from './_components/chapters-form'
 import { Banner } from '@/components/banner'
 import { Actions } from './_components/actions'
 
-// TODO: Publish the course on FE
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth()
 
@@ -65,7 +64,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
 
   return (
     <>
-      {!isComplete && (
+      {!course.isPublished && (
         <Banner label='This course is unpublished. It will not be visible to the students.' />
       )}
       <div className='p-6'>
