@@ -1,6 +1,5 @@
 import { db } from '@/lib/db'
 
-// TODO: 7:36
 export const getProgress = async (
   userId: string,
   courseId: string,
