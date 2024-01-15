@@ -6,19 +6,22 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { CourseSidebar } from './course-sidebar'
 
 interface CourseMobileSidebarProps {
-    course: Course & { userProgress: UserProgress[] | null }[]
-    progressCount: number
+  course: Course & { userProgress: UserProgress[] | null }[]
+  progressCount: number
 }
 
 export const CourseMobileSidebar = ({
-    course,
-    progressCount,
+  course,
+  progressCount,
 }: CourseMobileSidebarProps) => {
-    return (
-        <Sheet>
-            <SheetTrigger className='md:hidden pr-4 '>
-                <Menu />
-            </SheetTrigger>
-        </Sheet>
-    )
+  return (
+    <Sheet>
+      <SheetTrigger className='md:hidden pr-4 '>
+        <Menu />
+      </SheetTrigger>
+      <SheetContent>
+        <CourseSidebar course={course} progressCount={progressCount} />
+      </SheetContent>
+    </Sheet>
+  )
 }
