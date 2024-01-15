@@ -6,7 +6,11 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { CourseSidebar } from './course-sidebar'
 
 interface CourseMobileSidebarProps {
-  course: Course & { userProgress: UserProgress[] | null }[]
+  course: Course & {
+    chapters: (Chapter & {
+      userProgress: UserProgress[] | null
+    })[]
+  }
   progressCount: number
 }
 
