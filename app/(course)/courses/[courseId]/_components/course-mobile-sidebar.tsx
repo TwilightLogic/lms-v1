@@ -14,6 +14,7 @@ interface CourseMobileSidebarProps {
   progressCount: number
 }
 
+// TODO: 8:30
 export const CourseMobileSidebar = ({
   course,
   progressCount,
@@ -23,7 +24,7 @@ export const CourseMobileSidebar = ({
       <SheetTrigger className='md:hidden pr-4 '>
         <Menu />
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent side='left' className='p-0 bg-white dark:bg-slate-950 w-72'>
         <CourseSidebar course={course} progressCount={progressCount} />
       </SheetContent>
     </Sheet>
