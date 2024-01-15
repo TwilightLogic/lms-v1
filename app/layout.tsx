@@ -9,29 +9,29 @@ import { ConfettiProvider } from '@/components/providers/confetti-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'lms-v1',
-  description: 'LMS Platform v1',
+    title: 'lms-v1',
+    description: 'LMS Platform v1',
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode
 }) {
-  return (
-    <ClerkProvider>
-      <html lang='en'>
-        <head>
-          <link rel='icon' href='./logo.svg' />
-        </head>
-        <body className={inter.className}>
-          <ThemeProvider attribute='class' defaultTheme='system'>
-            <ConfettiProvider />
-            <ToastProvider />
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
-  )
+    return (
+        <ClerkProvider>
+            <html lang='en'>
+                <head>
+                    <link rel='icon' href='./logo.svg' />
+                </head>
+                <body className={inter.className}>
+                    <ThemeProvider attribute='class' defaultTheme='system'>
+                        <ConfettiProvider />
+                        <ToastProvider />
+                        {children}
+                    </ThemeProvider>
+                </body>
+            </html>
+        </ClerkProvider>
+    )
 }
