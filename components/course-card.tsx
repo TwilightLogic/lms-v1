@@ -36,7 +36,7 @@ export const CourseCard = ({
           <p className='text-xs text-muted-foreground'>{category}</p>
         </div>
         <div className='my-3 flex item-center gap-x-2 text-sm md:text-xs'>
-          <div className='flex items-center gap-x-1 text-slate-500'>
+          <div className='flex items-center gap-x-1 text-slate-500 dark:text-slate-300'>
             <IconBadge size='sm' icon={BookOpen} />
             <span>
               {chaptersLength} {chaptersLength === 1 ? 'Chapter' : 'Chapters'}
