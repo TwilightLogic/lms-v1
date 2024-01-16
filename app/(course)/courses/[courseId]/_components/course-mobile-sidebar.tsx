@@ -14,7 +14,6 @@ interface CourseMobileSidebarProps {
   progressCount: number
 }
 
-// TODO: 8:30
 export const CourseMobileSidebar = ({
   course,
   progressCount,
