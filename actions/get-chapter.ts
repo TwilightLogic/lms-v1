@@ -77,7 +77,7 @@ export const getChapter = async ({
       })
     }
 
-    const UserProgress = await db.userProgress.findUnique({
+    const userProgress = await db.userProgress.findUnique({
       where: {
         userId_chapterId: { userId, chapterId },
       },
@@ -85,6 +85,12 @@ export const getChapter = async ({
 
     return {
       chapter,
+      course,
+      muxData,
+      attachments,
+      nextChapter,
+      userProgress,
+      purchase,
     }
   } catch (error) {
     console.log('[GET_CHAPTER]', error)
