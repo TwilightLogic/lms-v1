@@ -31,7 +31,6 @@ export const VideoPlayer = ({
 }: VideoPlayerProps) => {
   const [isReady, setIsReady] = useState(false)
 
-  // TODO:8:54
   return (
     <div className='relative aspect-video'>
       {!isReady && (
