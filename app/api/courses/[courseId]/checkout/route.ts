@@ -77,6 +77,8 @@ export async function POST(
         userId: user.id,
       },
     })
+
+    return NextResponse.json({ url: session.url })
   } catch (error) {
     console.log('[COURSE_ID_CHECKOUT]', error)
     return new NextResponse('Internal Error', { status: 500 })
