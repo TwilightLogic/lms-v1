@@ -15,7 +15,7 @@ async function main() {
         { name: 'Filming' },
       ],
     })
-    console.log('Database seeded')
+    // console.log('Database seeded')
   } catch (error) {
     console.log('Error seeding database categories')
   } finally {

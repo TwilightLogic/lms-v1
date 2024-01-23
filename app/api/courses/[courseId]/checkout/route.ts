@@ -5,6 +5,7 @@ import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 
 // 想一下为什么你的 checkout/route.ts 会放在这个目录下面
+// 想一下要完成一个 Stripe 的支付工能需要的步骤是什么
 export async function POST(
   req: Request,
   { params }: { params: { courseId: string } },
@@ -53,6 +54,7 @@ export async function POST(
       select: { stripeCustomerId: true },
     })
 
+    // 如果没有 Stripe 的账户，就自动创建一个
     if (!stripeCustomer) {
       const customer = await stripe.customers.create({
         email: user.emailAddresses[0].emailAddress,

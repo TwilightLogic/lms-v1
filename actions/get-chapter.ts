@@ -44,7 +44,7 @@ export const getChapter = async ({
       },
     })
 
-    console.log('[GET_CHAPTER]', { purchase, course, chapter })
+    // console.log('[GET_CHAPTER]', { purchase, course, chapter })
 
     if (!chapter || !course) {
       throw error('Chapter or course not found')
