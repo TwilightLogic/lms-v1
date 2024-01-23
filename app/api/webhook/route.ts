@@ -22,4 +22,24 @@ export async function POST(req: Request) {
   }
 
   const session = event.data.object as Stripe.Checkout.Session
+  const userId = session?.metadata?.userId
+  const courseId = session?.metadata?.courseId
+
+  if (event.type === 'checkout.session.completed') {
+    if (!userId || !courseId) {
+      return new NextResponse(`Webhook Error: Missing metadata`, {
+        status: 400,
+      })
+    }
+
+    await db.purchase.create({ data: { courseId: courseId, userId: userId } })
+  } else {
+    // 下面都是返回 200，是因为返回太多次 400 会导致 Stripe 会停止发送 webhook
+    return new NextResponse(
+      `Webhook Error: Unhandled event type ${event.type}`,
+      { status: 200 },
+    )
+  }
+
+  return new NextResponse(null, { status: 200 })
 }

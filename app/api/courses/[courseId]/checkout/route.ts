@@ -60,6 +60,7 @@ export async function POST(
         email: user.emailAddresses[0].emailAddress,
       })
 
+      // 将新创建的 Stripe 客户ID保存到数据库
       stripeCustomer = await db.stripeCustomer.create({
         data: {
           userId: user.id,
