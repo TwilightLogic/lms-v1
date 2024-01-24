@@ -44,7 +44,10 @@ export const CourseCard = ({
           </div>
         </div>
         {progress !== null ? (
-          <div>TODO: Progress Component</div>
+          // <div>TODO: Progress Component</div>
+          <p className='text-md md:text-sm font-medium text-slate-700 dark:text-slate-300'>
+            {formatPrice(price)}
+          </p>
         ) : (
           <p className='text-md md:text-sm font-medium text-slate-700 dark:text-slate-300'>
             {formatPrice(price)}
