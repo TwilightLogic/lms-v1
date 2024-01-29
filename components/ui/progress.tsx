@@ -9,7 +9,10 @@ import { cva, type VariantProps } from 'class-variance-authority'
 // cva: 用于根据不同的条件应用不同的样式类
 const progressVariants = cva('h-full w-full flex-1 bg-primary transition-all', {
   variants: {
-    variant: { default: 'bg-indigo-600', success: 'bg-emerald-700' },
+    variant: {
+      default: 'bg-indigo-600 dark:bg-indigo-400',
+      success: 'bg-emerald-700 dark:bg-emerald-500',
+    },
   },
   defaultVariants: { variant: 'default' },
 })
