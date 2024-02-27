@@ -49,11 +49,11 @@ export const getAnalytics = async (userId: string) => {
       totalSales,
     }
   } catch (error) {
-    console.log(['[GET_ANALYTICS]', error])
+    console.log('[GET_ANALYTICS]', error)
     return {
       data: [],
       totalRevenue: 0,
-      totalSale: 0,
+      totalSales: 0,
     }
   }
 }
